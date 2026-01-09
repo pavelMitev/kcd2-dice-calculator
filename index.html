@@ -8,9 +8,12 @@
     <!-- SEO & SOCIAL METADATA -->
     <meta name="description" content="The definitive Kingdom Come: Deliverance II Dice Calculator. Calculate exact probabilities and expected values for the Farkle (Zuber) mini-game. Optimize your dice loadout with deterministic math.">
     <meta name="keywords" content="Kingdom Come Deliverance 2 Dice Calculator, KCD2 Farkle Guide, KCD2 Zuber Strategy, Best Dice KCD2, Farkle Probability, KCD2 Gambling Tool">
+    
+    <!-- OPEN GRAPH / SOCIAL PREVIEW -->
     <meta property="og:title" content="Kingdom Come: Deliverance II Dice Calculator">
-    <meta property="og:description" content="Deterministic Farkle analysis for the taverns of Bohemia.">
+    <meta property="og:description" content="Deterministic mathematical analysis for the tavern gamblers of Bohemia. Optimize your Farkle loadout.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kcd2-dice-calculator.vercel.app/">
     
     <!-- FONTS & STYLES -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=IM+Fell+English+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -228,17 +231,17 @@
                 <div className="min-h-screen text-[#f5efda] p-4 md:p-10 font-serif selection:bg-[#5a4633] selection:text-white">
                     <div className="max-w-7xl mx-auto space-y-12">
                         <header className="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-[#5a4633] pb-10">
-                            <div>
+                            <div className="max-w-full overflow-hidden">
                                 <div className="flex items-center gap-4 mb-3">
-                                    <h1 className="text-6xl font-black uppercase tracking-tighter medieval-font text-[#fdf6e3]">Kingdom Come: Deliverance II Dice Calculator</h1>
+                                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight medieval-font text-[#fdf6e3] leading-tight">Kingdom Come: Deliverance II Dice Calculator</h1>
                                 </div>
-                                <p className="text-[#c5b18a] manuscript-text text-2xl tracking-[0.2em]">Farkle mini-game optimal dice calculator</p>
+                                <p className="text-[#c5b18a] manuscript-text text-sm sm:text-base md:text-xl lg:text-2xl tracking-[0.2em]">Farkle mini-game optimal dice calculator</p>
                             </div>
                             <div className="flex bg-[#12100e] p-2 border border-[#5a4633] rounded-sm shadow-2xl">
                                 {['ledger', 'archive'].map(t => (
                                     <button 
                                         key={t} onClick={() => setActiveTab(t)}
-                                        className={`px-10 py-3 text-sm font-bold uppercase medieval-font transition-all ${activeTab === t ? 'bg-[#f3e5ab] text-[#0a0908] shadow-[0_0_25px_rgba(243,229,171,0.3)] scale-105 z-10' : 'text-[#8b7355] hover:text-[#f5efda]'}`}
+                                        className={`px-6 sm:px-10 py-3 text-[10px] sm:text-sm font-bold uppercase medieval-font transition-all ${activeTab === t ? 'bg-[#f3e5ab] text-[#0a0908] shadow-[0_0_25px_rgba(243,229,171,0.3)] scale-105 z-10' : 'text-[#8b7355] hover:text-[#f5efda]'}`}
                                     >
                                         {t === 'ledger' ? 'Current Hand' : 'The Treasury'}
                                     </button>
@@ -304,11 +307,11 @@
                                 <div className="lg:col-span-8 bg-[#0a0908] manuscript-border p-12 flex flex-col relative shadow-2xl">
                                     <div className="flex justify-between items-start mb-14 border-b border-[#5a4633]/40 pb-8">
                                         <div>
-                                            <h3 className="text-4xl font-bold flex items-center gap-5 text-[#fdf6e3] medieval-font tracking-tight mb-2">
+                                            <h3 className="text-2xl sm:text-3xl font-bold flex items-center gap-5 text-[#fdf6e3] medieval-font tracking-tight mb-2">
                                                 <TargetIcon className={`w-11 h-11 ${loading ? 'animate-medieval-spin' : 'text-[#f3e5ab]'}`} />
-                                                Manuscript of Fate
+                                                Probability Distribution
                                             </h3>
-                                            <p className="text-md text-[#c5b18a] serif-body italic opacity-80">Deterministic outcome analysis across all 46,656 permutations.</p>
+                                            <p className="text-md text-[#c5b18a] serif-body italic opacity-80">Mathematical outcome analysis across all 46,656 permutations.</p>
                                         </div>
                                     </div>
 
@@ -356,7 +359,7 @@
                         ) : (
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                                 <div className="parchment manuscript-border p-12 shadow-2xl bg-[#0d0b09]">
-                                    <h2 className="text-4xl font-bold uppercase mb-12 medieval-font text-[#fdf6e3] border-b border-[#5a4633] pb-6">Your Satchel</h2>
+                                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase mb-12 medieval-font text-[#fdf6e3] border-b border-[#5a4633] pb-6 whitespace-nowrap">Your Satchel</h2>
                                     <div className="space-y-4 max-h-[600px] overflow-y-auto pr-6">
                                         {inventory.map((name, i) => (
                                             <div key={i} className="bg-[#181512] border border-[#5a4633] p-5 flex justify-between items-center hover:border-[#f3e5ab] transition-all group shadow-md">
@@ -375,7 +378,7 @@
 
                                 <div className="bg-[#0a0908] manuscript-border p-12 shadow-2xl">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12 border-b border-[#5a4633] pb-8">
-                                        <h2 className="text-4xl font-bold uppercase medieval-font text-[#c5b18a]">The Archive</h2>
+                                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase medieval-font text-[#c5b18a] whitespace-nowrap">The Archive</h2>
                                         <div className="relative group w-full md:w-80">
                                             <SearchIcon className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#5a4633] group-focus-within:text-[#f3e5ab] transition-colors" />
                                             <input 
@@ -402,7 +405,7 @@
                             </div>
                         )}
                         <footer className="mt-12 pt-8 border-t border-[#5a4633]/20 text-center space-y-4">
-                            <p className="text-[10px] uppercase tracking-widest text-[#8b7355] medieval-font max-w-2xl mx-auto opacity-100 leading-relaxed font-bold">
+                            <p className="text-[10px] uppercase tracking-widest text-[#8b7355] medieval-font max-w-2xl mx-auto opacity-80 leading-relaxed font-bold">
                                 The Kingdom Come: Deliverance II Dice Calculator is a fan-made strategy tool. It is not affiliated with, endorsed by, or associated with Warhorse Studios or Deep Silver. 
                                 All game names and dice properties are trademarks of their respective owners.
                             </p>
