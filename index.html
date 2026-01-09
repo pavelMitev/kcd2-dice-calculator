@@ -231,16 +231,20 @@
             return (
                 <div className="min-h-screen text-[#f5efda] pt-12 pb-4 px-4 md:p-10 font-serif selection:bg-[#5a4633] selection:text-white">
                     <div className="max-w-7xl mx-auto space-y-12">
-                        <header className="flex flex-col items-center justify-between gap-8 border-b border-[#5a4633] pb-10 text-center sm:text-left sm:flex-row sm:items-end">
-                            <div className="max-w-full overflow-hidden">
-                                <h1 className="text-[14px] xs:text-base sm:text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight medieval-font text-[#fdf6e3] leading-tight whitespace-nowrap">Kingdom Come: Deliverance II Dice Calculator</h1>
-                                <p className="text-[#c5b18a] manuscript-text text-sm sm:text-base md:text-xl lg:text-2xl tracking-[0.2em] mt-2">Farkle mini-game optimal dice calculator</p>
+                        <header className="flex flex-col items-center justify-between gap-10 border-b border-[#5a4633] pb-10 text-center lg:text-left lg:flex-row lg:items-end">
+                            <div className="max-w-full">
+                                <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight medieval-font text-[#fdf6e3] leading-tight break-words">
+                                    Kingdom Come: Deliverance II Dice Calculator
+                                </h1>
+                                <p className="text-[#c5b18a] manuscript-text text-sm sm:text-base md:text-xl lg:text-2xl tracking-[0.2em] mt-3">
+                                    Farkle mini-game optimal dice calculator
+                                </p>
                             </div>
-                            <div className="flex flex-col w-full sm:flex-row bg-[#12100e] p-2 border border-[#5a4633] rounded-sm shadow-2xl sm:w-auto">
+                            <div className="flex flex-row w-full sm:w-auto bg-[#12100e] p-2 border border-[#5a4633] rounded-sm shadow-2xl">
                                 {['ledger', 'archive'].map(t => (
                                     <button 
                                         key={t} onClick={() => setActiveTab(t)}
-                                        className={`px-6 sm:px-10 py-3 text-[10px] sm:text-sm font-bold uppercase medieval-font transition-all w-full sm:w-auto ${activeTab === t ? 'bg-[#f3e5ab] text-[#0a0908] shadow-[0_0_25px_rgba(243,229,171,0.3)] scale-100 sm:scale-105 z-10' : 'text-[#8b7355] hover:text-[#f5efda]'}`}
+                                        className={`flex-1 sm:flex-initial px-4 sm:px-10 py-3 text-[10px] sm:text-sm font-bold uppercase medieval-font transition-all ${activeTab === t ? 'bg-[#f3e5ab] text-[#0a0908] shadow-[0_0_25px_rgba(243,229,171,0.3)] scale-100 sm:scale-105 z-10' : 'text-[#8b7355] hover:text-[#f5efda]'}`}
                                     >
                                         {t === 'ledger' ? 'Current Hand' : 'The Treasury'}
                                     </button>
@@ -303,10 +307,10 @@
                                     </div>
                                 </div>
 
-                                <div className="lg:col-span-8 bg-[#0a0908] manuscript-border p-6 sm:p-12 flex flex-col relative shadow-2xl min-h-[350px] sm:min-h-[500px]">
-                                    <div className="flex justify-between items-start mb-14 border-b border-[#5a4633]/40 pb-8">
+                                <div className="lg:col-span-8 bg-[#0a0908] manuscript-border p-6 sm:p-12 flex flex-col relative shadow-2xl min-h-[300px] sm:min-h-[500px]">
+                                    <div className="flex justify-between items-start mb-8 sm:mb-14 border-b border-[#5a4633]/40 pb-6 sm:pb-8">
                                         <div>
-                                            <h3 className="text-2xl sm:text-4xl font-bold flex items-center gap-5 text-[#fdf6e3] medieval-font tracking-tight mb-2">
+                                            <h3 className="text-xl sm:text-4xl font-bold flex items-center gap-5 text-[#fdf6e3] medieval-font tracking-tight mb-2">
                                                 <TargetIcon className={`w-11 h-11 ${loading ? 'animate-medieval-spin' : 'text-[#f3e5ab]'}`} />
                                                 Probability Distribution
                                             </h3>
@@ -315,12 +319,12 @@
                                     </div>
 
                                     {loading ? (
-                                        <div className="flex-1 flex flex-col items-center justify-center text-[#5a4633] gap-8">
-                                            <LoaderIcon className="w-24 h-24 text-[#f3e5ab] opacity-50" />
-                                            <p className="text-lg sm:text-xl uppercase tracking-[0.5em] manuscript-text italic text-[#c5b18a]">Whispering to the spirits...</p>
+                                        <div className="flex-1 flex flex-col items-center justify-center text-[#5a4633] gap-8 py-10">
+                                            <LoaderIcon className="w-16 h-16 sm:w-24 h-24 text-[#f3e5ab] opacity-50" />
+                                            <p className="text-sm sm:text-xl uppercase tracking-[0.5em] manuscript-text italic text-[#c5b18a]">Whispering to the spirits...</p>
                                         </div>
                                     ) : (
-                                        <div className="flex-1 w-full h-[250px] sm:h-[500px]">
+                                        <div className="flex-1 w-full h-[200px] sm:h-[400px]">
                                             <ResponsiveContainer width="100%" height="100%">
                                                 <BarChart data={analysis.chartData}>
                                                     <CartesianGrid strokeDasharray="0" vertical={false} stroke="#1e1b18" />
@@ -348,7 +352,7 @@
                                         </div>
                                     )}
                                     
-                                    <div className="mt-10 flex flex-wrap gap-4 sm:gap-10 text-[10px] sm:text-[12px] font-bold text-[#c5b18a] uppercase tracking-[0.25em] medieval-font border-t border-[#1e1b18] pt-8">
+                                    <div className="mt-8 flex flex-wrap gap-4 sm:gap-10 text-[9px] sm:text-[12px] font-bold text-[#c5b18a] uppercase tracking-[0.25em] medieval-font border-t border-[#1e1b18] pt-6">
                                         <span className="flex items-center gap-3"><div className="w-4 h-4 bg-[#5a0000] border border-red-900" /> Vile Bust</span>
                                         <span className="flex items-center gap-3"><div className="w-4 h-4 bg-[#332d26] border border-[#5a4633]" /> Common Roll</span>
                                         <span className="flex items-center gap-3"><div className="w-4 h-4 bg-[#f3e5ab] border border-[#fdf6e3]" /> Noble's Fortune</span>
@@ -357,8 +361,8 @@
                             </div>
                         ) : (
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                                <div className="parchment manuscript-border p-8 sm:p-12 shadow-2xl bg-[#0d0b09]">
-                                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase mb-12 medieval-font text-[#fdf6e3] border-b border-[#5a4633] pb-6 whitespace-nowrap text-center sm:text-left">Your Satchel</h2>
+                                <div className="parchment manuscript-border p-6 sm:p-12 shadow-2xl bg-[#0d0b09]">
+                                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold uppercase mb-12 medieval-font text-[#fdf6e3] border-b border-[#5a4633] pb-6 whitespace-nowrap text-center sm:text-left">Your Satchel</h2>
                                     <div className="space-y-4 max-h-[600px] overflow-y-auto pr-6">
                                         {inventory.map((name, i) => (
                                             <div key={i} className="bg-[#181512] border border-[#5a4633] p-5 flex justify-between items-center hover:border-[#f3e5ab] transition-all group shadow-md">
@@ -375,9 +379,9 @@
                                     </div>
                                 </div>
 
-                                <div className="bg-[#0a0908] manuscript-border p-8 sm:p-12 shadow-2xl">
+                                <div className="bg-[#0a0908] manuscript-border p-6 sm:p-12 shadow-2xl">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12 border-b border-[#5a4633] pb-8">
-                                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase medieval-font text-[#c5b18a] whitespace-nowrap text-center sm:text-left">The Archive</h2>
+                                        <h2 className="text-lg sm:text-xl md:text-2xl font-bold uppercase medieval-font text-[#c5b18a] whitespace-nowrap text-center sm:text-left">The Archive</h2>
                                         <div className="relative group w-full md:w-80">
                                             <SearchIcon className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#5a4633] group-focus-within:text-[#f3e5ab] transition-colors" />
                                             <input 
